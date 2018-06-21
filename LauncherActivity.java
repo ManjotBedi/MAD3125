@@ -1,4 +1,4 @@
-package com.example.macstudent.day3;
+package com.example.macstudent.foodatdoor;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,6 @@ public class LauncherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
-
         final Context context =this;
 
         Thread timer = new Thread() {
@@ -25,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity {
 
                 } catch (Exception ex) {
                     Toast.makeText(context, "Something went wrong", Toast.LENGTH_LONG).
-                    show();
+                            show();
                 } finally {
                     finish();
                     startActivity(new Intent(context, LoginActivity.class));

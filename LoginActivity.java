@@ -1,7 +1,6 @@
-package com.example.macstudent.day3;
+package com.example.macstudent.foodatdoor;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +13,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     Button btnLogin;
     Button btnCancel;
+    Button btnSignUp;
     EditText edtEmail;
     EditText edtPassword;
+
 
 
 
@@ -31,6 +32,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnCancel = findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(this);
 
+        btnSignUp = findViewById(R.id.btnSignUp);
+        btnSignUp.setOnClickListener(this);
+
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
     }
@@ -42,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             String username = edtEmail.getText().toString();
             String password = edtPassword.getText().toString();
 
-            if (username.equals("mad@summer.com") && password.equals("qwer")){
+            if (username.equals("manjot") && password.equals("asdf")){
                 Toast.makeText(this,"Login Successful",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(this, HomeActivity.class));
             }else{
@@ -53,9 +57,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else if(view.getId() == btnCancel.getId()){
             Toast.makeText(this,"Creating an account",Toast.LENGTH_LONG).show();
 
-            Intent signUpIntent = new Intent(this,HomeActivity.class);
-            startActivity(signUpIntent);
+            finish();
+
+        } else if (view.getId()== btnSignUp.getId()){
+            Toast.makeText(this, "Sign Up", Toast.LENGTH_LONG).show();
+            Intent SignUpIntent = new Intent(this,SignUp.class);
+            startActivity(SignUpIntent);
+
         }
     }
 }
-
